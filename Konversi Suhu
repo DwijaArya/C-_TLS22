@@ -1,0 +1,202 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <cstdlib>
+#include <cmath>
+
+using namespace std;
+
+string toString (double);
+int toInt (string);
+double toDouble (string);
+void celcius();
+void fahrenheit();
+void kelvin();
+void reamur();
+
+int main() {
+    cout << "<==Selamat Datang di Konversi Suhu==>" << endl;
+    string suhu[4];
+
+    suhu[0] = "1. Celcius";
+    suhu[1] = "2. Reamur";
+    suhu[2] = "3. Fahrenheit";
+    suhu[3] = "4. Kelvin";
+    float jawaban;
+
+    cout << suhu[0] << endl;
+    cout << suhu[1] << endl;
+    cout << suhu[2] << endl;
+    cout << suhu[3] << endl;
+    cout << "Masukkan suhu yang ingin dikonversi, input berupa angka " << endl;
+    cin >> jawaban;
+    while (jawaban < 1 || jawaban > 4) {
+        cout << "Input harus berupa angka lebih dari 1 atau kurang dari 4" << endl;
+        cin >> jawaban;
+    }
+    if (jawaban == 1) {
+        celcius();
+    } else {
+        if (jawaban == 2) {
+            reamur();
+        } else {
+            if (jawaban == 3) {
+                fahrenheit();
+            } else {
+                if (jawaban == 4) {
+                    kelvin();
+                }
+            }
+        }
+    }
+}
+
+void celcius() {
+    string suhu[3];
+    float suhuCelcius, suhuReamur, suhuFahrenheit, suhuKelvin, jawab;
+
+    suhu[0] = "1. Reamur";
+    suhu[1] = "2. Fahreheit";
+    suhu[2] = "3. Kelvin";
+    cout << "Masukkan nilai suhu Celcius" << endl;
+    cin >> suhuCelcius;
+    cout << suhu[0] << endl;
+    cout << suhu[1] << endl;
+    cout << suhu[2] << endl;
+    cout << "Ingin dikonversi menjadi suhu apa?" << endl;
+    cin >> jawab;
+    while (jawab < 1 || jawab > 3) {
+        cout << "Masukkan angka yang benar" << endl;
+        cin >> jawab;
+    }
+    if (jawab == 1) {
+        suhuReamur = (float) ((double) 4 / 5 * suhuCelcius);
+        cout << "Suhu pada Reamur adalah " << suhuReamur << endl;
+    } else {
+        if (jawab == 2) {
+            suhuFahrenheit = (float) (32 + (double) 9 / 5 * suhuCelcius);
+            cout << "Suhu pada Fahrenheit adalah " << suhuFahrenheit << endl;
+        } else {
+            if (jawab == 3) {
+                suhuKelvin = 273 + suhuCelcius;
+                cout << "Suhu pada Kelvin adalah " << suhuKelvin << endl;
+            }
+        }
+    }
+}
+
+void fahrenheit() {
+    string suhu[3];
+    float suhuCelcius, suhuReamur, suhuFahrenheit, suhuKelvin, jawab;
+
+    suhu[0] = "1. Celcius";
+    suhu[1] = "2. Reamur";
+    suhu[2] = "3. Kelvin";
+    cout << "Masukkan nilai suhu Fahrenheit" << endl;
+    cin >> suhuFahrenheit;
+    cout << suhu[0] << endl;
+    cout << suhu[1] << endl;
+    cout << suhu[2] << endl;
+    cout << "Ingin dikonversi menjadi suhu apa? " << endl;
+    cin >> jawab;
+    while (jawab < 1 || jawab > 3) {
+        cout << "Masukkan angka yang benar" << endl;
+        cin >> jawab;
+    }
+    if (jawab == 1) {
+        suhuCelcius = (float) ((double) ((suhuFahrenheit - 32) * 5) / 9);
+        cout << "Suhu pada Celcius adalah " << suhuCelcius << endl;
+    } else {
+        if (jawab == 2) {
+            suhuReamur = (float) ((double) ((suhuFahrenheit - 32) * 4) / 9);
+            cout << "Suhu pada Reamur adalah " << suhuReamur << endl;
+        } else {
+            if (jawab == 3) {
+                suhuKelvin = (float) ((double) ((suhuFahrenheit - 32) * 5) / 9 + 273);
+                cout << "Suhu pada Kelvin adalah " << suhuKelvin << endl;
+            }
+        }
+    }
+}
+
+void kelvin() {
+    string suhu[3];
+    float suhuCelcius, suhuFahrenheit, suhuReamur, suhuKelvin, jawab;
+
+    suhu[0] = "1. Celcius";
+    suhu[1] = "2. Reamur";
+    suhu[2] = "3. Fahrenheit";
+    cout << "Masukkan nilai suhu Kelvin" << endl;
+    cin >> suhuKelvin;
+    cout << suhu[0] << endl;
+    cout << suhu[1] << endl;
+    cout << suhu[2] << endl;
+    cout << "Ingin dikonversi menjadi suhu apa? " << endl;
+    cin >> jawab;
+    while (jawab < 1 || jawab > 3) {
+        cout << "Masukkan angka yang benar" << endl;
+        cin >> jawab;
+    }
+    if (jawab == 1) {
+        suhuCelcius = suhuKelvin - 273;
+        cout << "Suhu pada Celcius adalah " << suhuCelcius << endl;
+    } else {
+        if (jawab == 2) {
+            suhuReamur = (float) ((double) ((suhuKelvin - 273) * 4) / 5);
+            cout << "Suhu pada Reamur adalah " << suhuReamur << endl;
+        } else {
+            if (jawab == 3) {
+                suhuFahrenheit = (float) ((double) ((suhuKelvin - 273) * 9) / 5 + 32);
+                cout << "Suhu pada Fahrenheit adalah " << suhuFahrenheit << endl;
+            }
+        }
+    }
+}
+
+void reamur() {
+    string suhu[3];
+    float suhuCelcius, suhuReamur, suhuFahrenheit, suhuKelvin, jawab;
+
+    suhu[0] = "1. Celcius";
+    suhu[1] = "2. Fahrenheit";
+    suhu[2] = "3. Kelvin";
+    cout << "Masukkan suhu Reamur" << endl;
+    cin >> suhuReamur;
+    cout << suhu[0] << endl;
+    cout << suhu[1] << endl;
+    cout << suhu[2] << endl;
+    cout << "Ingin dikonversi menjadi suhu apa?" << endl;
+    cin >> jawab;
+    while (jawab < 1 || jawab > 3) {
+        cout << "Masukkan angka yang benar" << endl;
+        cin >> jawab;
+    }
+    if (jawab == 1) {
+        suhuCelcius = (float) ((double) 5 / 4 * suhuReamur);
+        cout << "Suhu pada Celcius adalah " << suhuCelcius << endl;
+    } else {
+        if (jawab == 2) {
+            suhuFahrenheit = (float) (32 + (double) 9 / 4 * suhuReamur);
+            cout << "Suhu pada Fahrenheit adalah " << suhuFahrenheit << endl;
+        } else {
+            if (jawab == 3) {
+                suhuKelvin = (float) (273 + (double) 5 / 4 * suhuReamur);
+                cout << "Suhu pada Kelvin adalah " << suhuKelvin << endl;
+            }
+        }
+    }
+}
+
+string toString (double value) {
+    stringstream temp;
+    temp << value;
+    return temp.str();
+}
+
+int toInt (string text) {
+    return atoi(text.c_str());
+}
+
+double toDouble (string text) {
+    return atof(text.c_str());
+}
